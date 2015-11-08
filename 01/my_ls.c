@@ -21,7 +21,7 @@ main(int argc,char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	printf("dev:%d\nino:%d\nnlink:%d\n",buf.st_dev,buf.st_ino,buf.st_nlink);
+	printf("blocks:%d\ninode-number:%d\nhard-links:%d\nbytes:%d\n",buf.st_blocks,buf.st_ino,buf.st_nlink,buf.st_size);
 
 	return 0;
 }
