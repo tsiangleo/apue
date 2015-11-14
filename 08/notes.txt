@@ -1,0 +1,34 @@
+
+fclose 与close的区别
+
+调用fclose，底层也会调用close函数关闭fd。
+调用close关闭fd后，自然就无法使用对应的FILE文件指针。
+示例程序如下：
+#include<stdio.h>
+#include<unistd.h>
+
+int
+main()
+{
+	fclose(stdout);
+	write(STDOUT_FILENO,"hello",5);
+
+	//close(STDOUT_FILENO);
+	//fputs("hello",stdout);
+
+	return 0;
+}
+
+
+
+fclose 与fflush的区别
+
+fflush：冲洗缓冲区所有未写数据至内核。
+fclose：冲洗缓冲区的输出数据，释放缓冲区。
+
+
+fflush与fsync的区别
+
+fflush：将用户缓冲区的数据刷至内核。
+fsync：将内核缓冲区的数据刷至磁盘。
+
