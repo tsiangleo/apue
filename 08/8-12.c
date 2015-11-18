@@ -3,7 +3,7 @@
 #include<unistd.h>
 
 int 
-system (const char *cmdstring)
+my_system (const char *cmdstring)
 {
 	pid_t pid;
 	int status;
