@@ -9,6 +9,7 @@
 static void sig_int(int signo)
 {
 	printf("interrupt\n%% ");
+	fflush(stdout);
 }
 
 int
